@@ -1,0 +1,16 @@
+{% extends "usedcars_app/base.html" %}
+
+{% block title %}Car List{% endblock %}
+
+{% block content %}
+    <h2>Available Cars</h2>
+    <ul>
+        {% for car in cars %}
+        <li>
+            <a href="{% url 'cardetail' car.id %}">
+                 {{ car.make }} {{ car.model }} {{ car.year }} - ${{ car.price }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

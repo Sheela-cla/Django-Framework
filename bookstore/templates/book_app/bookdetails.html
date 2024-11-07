@@ -1,0 +1,13 @@
+<html>
+{% extends 'book_app/base.html' %}
+{% block content %}
+<h1>Book Information Indetail</h1>
+
+        <li>Title: {{book.title}}</li>
+        <li>Author: {{book.author}} </li>
+        <li>Descriptions: {{book.description}}</li> 
+        <li>Price: {{book.price}}</li>
+        <li>Publication_date: {{book.publication_date}}</li>
+
+{% endblock %}
+</html>

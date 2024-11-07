@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Car Dealership{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Car Dealership</h1>
+        <nav>
+            <a href="{% url 'carlist' %}">Home</a>
+            <form action="{% url 'search' %}" method="get">
+                <input type="text" name="q" placeholder="Search by make, model, or year">
+                <button type="submit">Search</button>
+            </form>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Car Dealership</p>
+    </footer>
+</body>
+</html>

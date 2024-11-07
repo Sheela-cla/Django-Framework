@@ -1,0 +1,18 @@
+{% extends "usedcars_app/base.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+    <h2>Search Results for "{{ query }}"</h2>
+    <ul>
+        {% for car in results %}
+        <li>
+            <a href="{% url 'car_detail' car.id %}">
+                {{ car.year }} {{ car.make }} {{ car.model }} - ${{ car.price }}
+            </a>
+        </li>
+        {% empty %}
+        <li>No results found</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

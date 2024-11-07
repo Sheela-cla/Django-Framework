@@ -1,0 +1,19 @@
+<html>
+{% extends 'book_app/base.html' %}
+{% block content %}
+    <h1>Here are our Books for you: </h1>
+    <h2>click the title to get the details of the Books</h2>
+    
+    <ol>
+        {% for book in books %}
+
+            <li><a href="{% url 'book_app:bookdetails' book.id %}"> {{ book.title }}</a> </li>
+           
+       
+        {% empty %}
+            <li>No users found.</li>
+        {% endfor %}
+    </ol>
+{% endblock %}
+
+</html>
